@@ -5,4 +5,4 @@ Get-AppxProvisionedPackage -Online | Where-Object {$_.PackageName -NotMatch $Req
 Get-AppxPackage -AllUsers | Where-Object {$_.Name -NotMatch $RequiredPackages} | Remove-AppxPackage
 
 # Restore
-#Get-AppxPackage -AllUsers | Foreach {Add-AppxPackage -DisableDevelopmentMode -Register “$($_.InstallLocation)\AppXManifest.xml”}
+#Get-AppxPackage -AllUsers | Foreach {Add-AppxPackage -DisableDevelopmentMode -Register "$($_.InstallLocation)\AppXManifest.xml"}
