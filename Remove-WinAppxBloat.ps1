@@ -1,8 +1,5 @@
 #Requires -RunAsAdministrator
-#Requires -Version 3
+#Requires -Version 4
 $RequiredPackages = "CheckPoint.VPN|f5.vpn.client|FileManager|JuniperNetworks.JunosPulseVpn|Microsoft.AAD.BrokerPlugin|Microsoft.AccountsControl|Microsoft.Advertising.Xaml|Microsoft.Appconnector|Microsoft.BioEnrollment|Microsoft.DesktopAppInstaller|Microsoft.LockApp|Microsoft.Media.PlayReadyClient|Microsoft.Messaging|Microsoft.MicrosoftEdge|Microsoft.MicrosoftStickyNotes|Microsoft.MoCamera|Microsoft.NET.Native.Framework|Microsoft.NET.Native.Runtime|Microsoft.OneConnect|Microsoft.PPIProjection|Microsoft.StorePurchaseApp|Microsoft.VCLibs|Microsoft.Windows.Apprep.ChxApp|Microsoft.Windows.AssignedAccessLockApp|Microsoft.Windows.CloudExperienceHost|Microsoft.Windows.ContentDeliveryManager|Microsoft.Windows.Cortana|Microsoft.Windows.ParentalControls|Microsoft.Windows.Photos|Microsoft.Windows.SecondaryTileExperience|Microsoft.Windows.SecureAssessmentBrowser|Microsoft.Windows.ShellExperienceHost|Microsoft.WindowsAlarms|Microsoft.WindowsCalculator|Microsoft.WindowsCamera|Microsoft.WindowsMaps|Microsoft.WindowsSoundRecorder|Microsoft.WindowsStore|Microsoft.WinJS|Microsoft.XboxGameCallableUI|Microsoft.XboxIdentityProvider|SonicWALL.MobileConnect|windows.devicesflow|windows.immersivecontrolpanel|Windows.MiracastView|Windows.PrintDialog|Windows.PurchaseDialog|winstore"
 Get-AppxProvisionedPackage -Online | Where-Object {$_.PackageName -NotMatch $RequiredPackages} | Remove-AppxProvisionedPackage -Online
 Get-AppxPackage -AllUsers | Where-Object {$_.Name -NotMatch $RequiredPackages} | Remove-AppxPackage
-
-# Restore
-#Get-AppxPackage -AllUsers | Foreach {Add-AppxPackage -DisableDevelopmentMode -Register "$($_.InstallLocation)\AppXManifest.xml"}
