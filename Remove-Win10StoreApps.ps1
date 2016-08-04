@@ -1,3 +1,0 @@
-# DEPRECATED: Replace with Remove-WinAppxBloat.ps1 - https://github.com/GavinEke/GAT/blob/master/Remove-WinAppxBloat.ps1
-Get-AppxProvisionedPackage -Online | Where-Object {$_.PackageName -Match "Microsoft.BingNews|Microsoft.BingWeather|Microsoft.BingFinance|Microsoft.BingSports|Microsoft.XboxApp|Microsoft.Office.Sway|Microsoft.Office.OneNote|Microsoft.MicrosoftOfficeHub|Microsoft.SkypeApp"} | Remove-AppxProvisionedPackage -Online
-Get-AppxPackage | Where-Object {$_.Name -Match "Microsoft.BingNews|Microsoft.BingWeather|Microsoft.BingFinance|Microsoft.BingSports|Microsoft.XboxApp|Microsoft.Office.Sway|Microsoft.Office.OneNote|Microsoft.MicrosoftOfficeHub|Microsoft.SkypeApp"} | Remove-AppxPackage
