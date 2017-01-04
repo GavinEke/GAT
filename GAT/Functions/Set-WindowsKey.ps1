@@ -13,7 +13,7 @@
 
         [Parameter(Mandatory=$False,ValueFromPipelineByPropertyName=$True)]
         [Alias("MachineName")]
-        [Switch[]]$ComputerName
+        [String[]]$ComputerName
     )
 
     Begin{
