@@ -4,7 +4,7 @@
 RootModule = 'GAT.psm1'
 
 # Version number of this module.
-ModuleVersion = '1.1.1'
+ModuleVersion = '1.2.0'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
@@ -100,9 +100,7 @@ PrivateData = @{
 
         # ReleaseNotes of this module
         ReleaseNotes = '
-        Added new function:
-        
-        - Save-Screenshot
+        Updated Remove-AppxBloat to include 1709 packages.
         '
 
     } # End of PSData hashtable
