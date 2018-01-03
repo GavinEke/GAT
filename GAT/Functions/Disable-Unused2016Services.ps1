@@ -46,9 +46,9 @@ https://gist.github.com/GavinEke/abfc2a547aea74b9d74a2c0c598f3fd7
 Function Disable-Unused2016Services {
     [CmdletBinding()]
     Param(
-        [Parameter(Mandatory=$False,ValueFromPipelineByPropertyName=$True,Position=1)]
-        [Alias('__SERVER','CN','hostname','MachineName')]
-        [String[]]$ComputerName,
+        [Parameter(ValueFromPipelineByPropertyName=$True)]
+        [Alias('__SERVER')]
+        [string[]]$ComputerName,
 
         [switch]$XboxOnly
     )
