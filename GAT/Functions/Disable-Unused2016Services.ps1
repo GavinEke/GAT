@@ -35,7 +35,7 @@ This command with will remotely disable the 2 Xbox services on the computers nam
 
 .EXAMPLE
 
-PS C:\> Get-ADComputer -Filter {OperatingSystem -Like “Windows Server*”} | Select-Object -ExpandProperty Name | Disable-Unused2016Services
+PS C:\> Get-ADComputer -Filter {OperatingSystem -Like "Windows Server*"} | Select-Object -ExpandProperty Name | Disable-Unused2016Services
 
 Remotely disables unused services of computers piped in from AD.
 
