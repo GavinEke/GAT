@@ -53,7 +53,7 @@ Function Disable-Unused2016Services {
         [switch]$XboxOnly
     )
 
-    Begin{
+    Begin {
         $fullservices = @(
             'AxInstSV',
             'bthserv',
@@ -128,5 +128,5 @@ Function Disable-Unused2016Services {
         }
     }
 
-    End{}
+    End {}
 }
