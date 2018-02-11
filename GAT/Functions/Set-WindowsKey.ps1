@@ -87,7 +87,7 @@ Function Set-WindowsKey {
                     }
 
                 } ElseIf ($PSCmdlet.ParameterSetName -eq "OEM") {
-                    $Key = $SoftwareLicensingService | Invoke-CimMethod -ComputerName $Item -MethodName OA3xOriginalProductKey
+                    $Key = $SoftwareLicensingService | Select-Object -ExpandProperty OA3xOriginalProductKey
                 }
 
                 $SoftwareLicensingService | Invoke-CimMethod -ComputerName $Item -MethodName "InstallProductKey($Key)"
@@ -160,7 +160,7 @@ Function Set-WindowsKey {
                 }
 
             } ElseIf ($PSCmdlet.ParameterSetName -eq "OEM") {
-                $Key = $SoftwareLicensingService | Invoke-CimMethod -MethodName OA3xOriginalProductKey
+                $Key = $SoftwareLicensingService | Select-Object -ExpandProperty OA3xOriginalProductKey
             }
 
             $SoftwareLicensingService | Invoke-CimMethod -MethodName InstallProductKey -Arguments @{ ProductKey = $Key }
