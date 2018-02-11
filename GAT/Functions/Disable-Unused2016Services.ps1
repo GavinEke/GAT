@@ -47,7 +47,7 @@ Function Disable-Unused2016Services {
     [CmdletBinding()]
     Param(
         [Parameter(ValueFromPipelineByPropertyName=$True)]
-        [Alias('__SERVER')]
+        [Alias('__SERVER','CN')]
         [string[]]$ComputerName,
 
         [switch]$XboxOnly
