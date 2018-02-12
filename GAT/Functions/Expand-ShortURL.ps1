@@ -1,6 +1,6 @@
 Function Expand-ShortURL {
     Param(
-        [Parameter(Mandatory = $true,HelpMessage = 'Short URL to be expanded',ValueFromPipeline = $True,Position = 0)]
+        [Parameter(Mandatory = $True,HelpMessage = 'Short URL to be expanded',ValueFromPipeline = $True)]
         [ValidateNotNullOrEmpty()]
         [string[]] $URL
     )
@@ -15,14 +15,14 @@ Function Expand-ShortURL {
                     $LongURL = $Request.Headers.Location
                 }
 
-                [PSCustomObject]@{  
+                [PSCustomObject]@{
                     ShortURL = $Item
                     LongURL = $LongURL
                 }
             } Catch {
                 $_.Exception.Message
             }
-        }            
+        }
     }
 
     End {}

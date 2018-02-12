@@ -2,7 +2,7 @@
 Function Get-WeatherReport {
     [Cmdletbinding()]
     Param(
-        [Parameter(HelpMessage = 'Enter name of the City to get weather report',Position = 0)]
+        [Parameter(HelpMessage = 'Enter name of the City to get weather report')]
         [string]$City # Not Required
     )
 
@@ -19,7 +19,7 @@ Function Get-WeatherReport {
             } Catch {
                 $_.Exception.Message
             }
-        }            
+        }
     }
 
     End {}

@@ -100,12 +100,12 @@ Function Disable-Unused2016Services {
             'XblAuthManager',
             'XblGameSave'
         )
-        
+
         If ($XboxOnly) {
-            Write-Verbose -Message "Selecting only xbox services"
+            Write-Verbose -Message 'Selecting only xbox services'
             $services = $xboxservices
         } Else {
-            Write-Verbose -Message "Selecting all services not required"
+            Write-Verbose -Message 'Selecting all services not required'
             $services = $fullservices
         }
     }
@@ -117,14 +117,14 @@ Function Disable-Unused2016Services {
                 Set-Service -ComputerName $ComputerName -Name $service -StartupType Disabled -ErrorAction SilentlyContinue
             }
             Write-Verbose -Message "Disabling Xbox tasks on $ComputerName"
-            [void]$(Invoke-Command -ComputerName $ComputerName -ScriptBlock {Get-ScheduledTask -TaskPath "\Microsoft\XblGameSave\" | Disable-ScheduledTask})
+            [void]$(Invoke-Command -ComputerName $ComputerName -ScriptBlock {Get-ScheduledTask -TaskPath '\Microsoft\XblGameSave\' | Disable-ScheduledTask})
         } Else {
             ForEach ($service in $services) {
                 Write-Verbose -Message "Disabling $service on localhost"
                 Set-Service -Name $service -StartupType Disabled
             }
-            Write-Verbose -Message "Disabling Xbox tasks on localhost"
-            [void]$(Get-ScheduledTask -TaskPath "\Microsoft\XblGameSave\" | Disable-ScheduledTask)
+            Write-Verbose -Message 'Disabling Xbox tasks on localhost'
+            [void]$(Get-ScheduledTask -TaskPath '\Microsoft\XblGameSave\' | Disable-ScheduledTask)
         }
     }
 

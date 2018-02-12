@@ -4,7 +4,7 @@
 RootModule = 'GAT.psm1'
 
 # Version number of this module.
-ModuleVersion = '1.2.0'
+ModuleVersion = '1.3.0'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
@@ -25,7 +25,7 @@ Copyright = '(c) 2017 Gavin Eke. All rights reserved.'
 Description = "Gavin's Admin Toolkit (GAT) is a collection of functions for managing Windows 8.1+/Windows Server 2012 R2+"
 
 # Minimum version of the Windows PowerShell engine required by this module
-PowerShellVersion = '4.0'
+PowerShellVersion = '5.1'
 
 # Name of the Windows PowerShell host required by this module
 # PowerShellHostName = ''
