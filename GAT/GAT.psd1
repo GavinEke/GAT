@@ -100,7 +100,9 @@ PrivateData = @{
 
         # ReleaseNotes of this module
         ReleaseNotes = '
-        Updated Remove-AppxBloat to include 1709 packages.
+        HQ 1.3.0 Release - Performance and quality improvements
+
+        # Minimum requirements now PS 5.1
         '
 
     } # End of PSData hashtable
