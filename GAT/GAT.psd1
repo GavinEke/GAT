@@ -100,7 +100,8 @@ PrivateData = @{
 
         # ReleaseNotes of this module
         ReleaseNotes = '
-        New Function - Get-EmlFileInfo
+        * New Function - Get-EmlFileInfo
+        * Minor performance improvements
         '
 
     } # End of PSData hashtable
