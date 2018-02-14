@@ -11,14 +11,12 @@ Function Remove-AppxBloat {
         Write-Verbose 'Starting to remove packages from all users'
         Get-AppxPackage -AllUsers | Where-Object {$_.Name -NotMatch $Whitelist} | Remove-AppxPackage | Out-Null
         Write-Output 'Successfully completed removal of all AppX Packages not specified in the whitelist'
-    } ElseIf ($Method -eq 'Blacklist') {
+    } Else {
         [regex]$Blacklist = "9E2F88E3.Twitter|A278AB0D.MarchofEmpires|ClearChannelRadioDigital.iHeartRadio|Facebook.Facebook|Flipboard.Flipboard|king.com.CandyCrushSaga|king.com.CandyCrushSodaSaga|Microsoft.3DBuilder|Microsoft.BingFinance|Microsoft.BingFoodAndDrink|Microsoft.BingHealthAndFitness|Microsoft.BingNews|Microsoft.BingSports|Microsoft.BingTranslator|Microsoft.BingTravel|Microsoft.BingWeather|Microsoft.CommsPhone|Microsoft.FreshPaint|Microsoft.GetHelp|Microsoft.Getstarted|Microsoft.Microsoft3DViewer|Microsoft.MicrosoftJackpot|Microsoft.MicrosoftJigsaw|Microsoft.MicrosoftOfficeHub|Microsoft.MicrosoftSolitaireCollection|Microsoft.MicrosoftSudoku|Microsoft.MinecraftUWP|Microsoft.MovieMoments|Microsoft.Office.OneNote|Microsoft.Office.Sway|Microsoft.People|Microsoft.Print3D|Microsoft.SkypeApp|Microsoft.SkypeWiFi|Microsoft.Studios.Wordament|Microsoft.Taptiles|microsoft.windowscommunicationsapps|Microsoft.WindowsFeedback|Microsoft.WindowsFeedbackHub|Microsoft.WindowsPhone|Microsoft.Xbox.TCUI|Microsoft.XboxApp|Microsoft.ZuneMusic|Microsoft.ZuneVideo|MicrosoftMahjong|ShazamEntertainmentLtd.Shazam|TheNewYorkTimes.NYTCrossword"
         Write-Verbose 'Starting to remove provisioned packages'
         Get-AppxProvisionedPackage -Online | Where-Object {$_.PackageName -Match $Blacklist} | Remove-AppxProvisionedPackage -Online | Out-Null
         Write-Verbose 'Starting to remove packages from all users'
         Get-AppxPackage -AllUsers | Where-Object {$_.Name -Match $Blacklist} | Remove-AppxPackage | Out-Null
         Write-Output 'Successfully completed removal of all AppX Packages specified in the blacklist'
-    } Else {
-        Write-Error 'An error that should never happen has occured'
     }
 }

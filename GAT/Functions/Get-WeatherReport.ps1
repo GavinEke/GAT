@@ -1,4 +1,3 @@
-#Requires -ShellId ConsoleHost
 Function Get-WeatherReport {
     [Cmdletbinding()]
     Param(
@@ -6,7 +5,11 @@ Function Get-WeatherReport {
         [string]$City # Not Required
     )
 
-    Begin {}
+    Begin {
+        If ($psISE) {
+            Write-Warning -Message 'This function does not display correctly in Windows PowerShell ISE, please use the console or VSCode'
+        }
+    }
 
     Process {
         ForEach ($Item in $City) {
