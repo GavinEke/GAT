@@ -4,7 +4,7 @@
 RootModule = 'GAT.psm1'
 
 # Version number of this module.
-ModuleVersion = '1.3.0'
+ModuleVersion = '1.3.1'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
@@ -61,7 +61,7 @@ PowerShellVersion = '5.1'
 # NestedModules = @()
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-FunctionsToExport = @('Disable-Unused2016Services','Disable-WindowsTelemetry','Enable-RDP','Expand-ShortURL','fuck','Get-ProfileBanner','Get-WeatherReport','Remove-AppxBloat','Save-Screenshot','Set-WindowsKey','sudo','Test-Administrator')
+FunctionsToExport = @('Disable-Unused2016Services','Disable-WindowsTelemetry','Enable-RDP','Expand-ShortURL','fuck','Get-EmlFileInfo','Get-ProfileBanner','Get-WeatherReport','Remove-AppxBloat','Save-Screenshot','Set-WindowsKey','sudo','Test-Administrator')
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = @()
@@ -100,9 +100,7 @@ PrivateData = @{
 
         # ReleaseNotes of this module
         ReleaseNotes = '
-        HQ 1.3.0 Release - Performance and quality improvements
-
-        # Minimum requirements now PS 5.1
+        New Function - Get-EmlFileInfo
         '
 
     } # End of PSData hashtable
